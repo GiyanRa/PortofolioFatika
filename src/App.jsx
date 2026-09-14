@@ -1282,7 +1282,7 @@ function Contact() {
               { label: "Location", value: "Samarinda, East Kalimantan" },
               { label: "LinkedIn", value: "Fatika Rahmanisa", href: "https://www.linkedin.com/in/fatika-rahmanisa-a1a30a431" },
               { label: "Instagram", value: "@_____fatikaa", href: "https://www.instagram.com/_____fatikaa/" },
-              { label: "Documents", value: "Google Drive", href: "https://drive.google.com/drders/1five/fol8OIaqx-LnEibIEPJeMr3xV60qiMd4jB?usp=sharing" },
+              { label: "Documents", value: "Google Drive", href: "https://drive.google.com/drive/folders/1f8OIaqx-LnEibIEPJeMr3xV60qiMd4jB?usp=sharing" },
             ].map((item) => {
               const content = (
                 <>
@@ -1326,7 +1326,25 @@ function Contact() {
           ) : (
             <form className="flex flex-col gap-4 rounded-3xl p-8"
               style={{ background: C_CREAM }}
-              onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                formData.append("access_key", "d093ae33-d772-4d2e-8e83-b4cf4d55ad02");
+                
+                try {
+                  const res = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    body: formData
+                  });
+                  if (res.ok) {
+                    setSent(true);
+                  } else {
+                    alert("Failed to send message. Please try again later.");
+                  }
+                } catch (err) {
+                  alert("An error occurred while sending your message.");
+                }
+              }}>
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { label: "Name", placeholder: "Your Name", required: true },
@@ -1334,7 +1352,7 @@ function Contact() {
                 ].map((f) => (
                   <div key={f.label}>
                     <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style={{ color: C_NAVY }}>{f.label}</label>
-                    <input type="text" required={f.required} placeholder={f.placeholder}
+                    <input type="text" name={f.label.toLowerCase()} required={f.required} placeholder={f.placeholder}
                       className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none"
                       style={{ background: `rgba(${C_SAGE_RGB},0.12)`, border: `1.5px solid rgba(${C_SAGE_RGB},0.2)`, color: C_NAVY }}
                       onFocus={(e) => { e.target.style.border = `1.5px solid ${C_SAGE}`; }}
@@ -1344,7 +1362,7 @@ function Contact() {
               </div>
               <div>
                 <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style={{ color: C_NAVY }}>Email</label>
-                <input type="email" required placeholder="email@company.com"
+                <input type="email" name="email" required placeholder="email@company.com"
                   className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none"
                   style={{ background: `rgba(${C_SAGE_RGB},0.12)`, border: `1.5px solid rgba(${C_SAGE_RGB},0.2)`, color: C_NAVY }}
                   onFocus={(e) => { e.target.style.border = `1.5px solid ${C_SAGE}`; }}
@@ -1352,7 +1370,7 @@ function Contact() {
               </div>
               <div>
                 <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style={{ color: C_NAVY }}>Message</label>
-                <textarea required rows={4} placeholder="Tell me about your needs..."
+                <textarea name="message" required rows={4} placeholder="Tell me about your needs..."
                   className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none resize-none"
                   style={{ background: `rgba(${C_SAGE_RGB},0.12)`, border: `1.5px solid rgba(${C_SAGE_RGB},0.2)`, color: C_NAVY }}
                   onFocus={(e) => { e.target.style.border = `1.5px solid ${C_SAGE}`; }}
