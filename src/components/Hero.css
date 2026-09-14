@@ -1,0 +1,244 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.hero-split {
+  display: flex;
+  width: 100%;
+}
+
+.hero-left {
+  flex: 1;
+  background-color: var(--bg-beige);
+  padding: 120px 0 60px 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-right {
+  flex: 1;
+  background-color: var(--bg-green);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+/* The curved shape */
+.curved-overlay {
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 150px;
+  height: 100%;
+  background-color: var(--bg-green);
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 500px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--badge-text);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.hero-title {
+  font-size: 80px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: var(--bg-dark-green);
+}
+
+.hero-subtitle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.line {
+  width: 40px;
+  height: 2px;
+  background-color: var(--accent-gold);
+  margin-right: 15px;
+}
+
+.degree {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  letter-spacing: 1px;
+}
+
+.university {
+  font-size: 14px;
+  color: #666;
+}
+
+.hero-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 60px;
+}
+
+.hero-contact-info {
+  display: flex;
+  gap: 30px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Right side visual */
+.hero-visual {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-card-wrapper {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* Background circles */
+.profile-card-wrapper::before,
+.profile-card-wrapper::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.profile-card-wrapper::before {
+  width: 500px;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.profile-card-wrapper::after {
+  width: 650px;
+  height: 650px;
+}
+
+.profile-card {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 4px solid var(--accent-gold);
+  background-color: white;
+  width: 320px;
+  height: 420px;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #222;
+  color: var(--accent-gold);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 15px;
+}
+
+.stat-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 15px 20px;
+  text-align: center;
+  color: white;
+  min-width: 140px;
+}
+
+.stat-box h3 {
+  font-size: 24px;
+  color: var(--accent-gold);
+  margin-bottom: 5px;
+}
+
+.stat-box p {
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .hero-split {
+    flex-direction: column;
+  }
+
+  .hero-right {
+    background-color: transparent;
+    /* Makes the background cream from parent */
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  .curved-overlay {
+    display: none;
+    /* Hide the green curve on mobile */
+  }
+
+  .stat-box {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .stat-box p {
+    color: #000000;
+    font-weight: 600;
+  }
+}

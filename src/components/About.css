@@ -1,0 +1,140 @@
+.about-section {
+  background-color: var(--bg-green);
+  color: white;
+  padding: 100px 0 150px 0;
+  position: relative;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Images Grid */
+.about-images {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  margin-top: 80px !important;
+}
+
+.img-card {
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.img-left {
+  width: 160px;
+  height: 300px;
+  transform: translateY(20px);
+}
+
+.img-center {
+  width: 220px;
+  height: 420px;
+  border: 3px solid var(--accent-gold);
+  z-index: 2;
+}
+
+.img-right {
+  width: 160px;
+  height: 300px;
+  transform: translateY(20px);
+}
+
+/* Content */
+.about-content {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.section-subtitle {
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #dddddd;
+}
+
+.section-title {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.line-gold {
+  width: 60px;
+  height: 2px;
+  background-color: var(--accent-gold);
+  margin-bottom: 30px;
+}
+
+.about-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin-bottom: 30px;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+}
+
+.about-text strong {
+  color: white;
+  font-weight: 600;
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  transition: all 0.3s;
+}
+
+.tag:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Bottom Wave */
+.wave-bottom {
+  position: absolute;
+  bottom: -2px;
+  /* Prevent tiny gaps */
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+}
+
+.wave-bottom .shape-fill {
+  fill: var(--bg-beige);
+}

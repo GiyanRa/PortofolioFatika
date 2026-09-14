@@ -1,0 +1,46 @@
+.navbar {
+  padding: 24px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: transparent; /* Assuming hero section handles background initially */
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo .logo-text {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: 24px;
+  color: var(--accent-gold);
+  letter-spacing: 2px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 24px;
+}
+
+.navbar-links a {
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: var(--bg-green);
+}
+
+.contact-btn {
+  padding: 8px 20px;
+  font-size: 14px;
+}
+
+/* Make text white when on green background (right side of hero) */
+/* We will handle this with specific section styling or keeping a unified look */
