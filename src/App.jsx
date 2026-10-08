@@ -177,7 +177,7 @@ const CERTS = [
     file: "/Micasa.pdf",
   },
   {
-    name: "Office Operational Management",
+    name: "Office Operations Management",
     issuer: "PT Micasa Edukasi Indonesia",
     year: "2026",
     tag: "Training",
@@ -1337,7 +1337,7 @@ function Contact() {
                 e.preventDefault();
                 const formData = new FormData(e.target);
                 formData.append("access_key", "d093ae33-d772-4d2e-8e83-b4cf4d55ad02");
-                
+
                 try {
                   const res = await fetch("https://api.web3forms.com/submit", {
                     method: "POST",
