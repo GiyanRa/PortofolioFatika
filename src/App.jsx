@@ -177,6 +177,13 @@ const CERTS = [
     file: "/Micasa.pdf",
   },
   {
+    name: "Office Operational Management",
+    issuer: "PT Micasa Edukasi Indonesia",
+    year: "2026",
+    tag: "Training",
+    file: "/Management.pdf",
+  },
+  {
     name: "Microsoft Excel Training",
     issuer: "Training Provider",
     year: "2026",
